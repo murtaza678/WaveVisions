@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "334092358039",
+    "firebase_url": "https://wavevisions-5899e.firebaseio.com",
+    "project_id": "wavevisions-5899e",
+    "storage_bucket": "wavevisions-5899e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334092358039:android:8f06b0fc067d2544",
+        "android_client_info": {
+          "package_name": "com.example.murtaza.wavevisions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334092358039-tnshoql467pm5udqkn32f5nepldlbiuk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.murtaza.wavevisions",
+            "certificate_hash": "89273b873b0a1ced4fc2978c65514b3dd2da88a0"
+          }
+        },
+        {
+          "client_id": "334092358039-1i93fmc65rmu0ijfvv7tbu4bshe6a1t2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL-KTaml2vf_riVBOM6slq7nhTesj9j0Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334092358039-1i93fmc65rmu0ijfvv7tbu4bshe6a1t2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

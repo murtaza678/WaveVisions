@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Wave Visions</string>
+    <string name="title_activity_admin">Admin</string>
+    <string name="title_activity_employeee">Employeee</string>
+</resources>
