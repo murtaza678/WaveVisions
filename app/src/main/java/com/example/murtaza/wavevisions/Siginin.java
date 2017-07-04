@@ -18,7 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Siginin extends AppCompatActivity {
-    EditText name,uid;
+    EditText name,uid,password;
+    String pass;
     RadioGroup rg;
     FirebaseDatabase database;
     Button signin;
@@ -27,8 +28,11 @@ public class Siginin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_siginin);
           name= (EditText) findViewById(R.id.name);
+        try{
           uid= (EditText) findViewById(R.id.id);
-          rg= (RadioGroup) findViewById(R.id.radioGroup);
+            password= (EditText) findViewById(R.id.pass);
+
+        rg= (RadioGroup) findViewById(R.id.radioGroup);
          signin = (Button) findViewById(R.id.signin);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +53,23 @@ public class Siginin extends AppCompatActivity {
                                  String key=s.getKey();
                                  String user=namee+" "+uidd;
                                  if (key.equals(user)){
+                                     FirebaseDatabase.getInstance().getReference("user/"+type+"/"+key+"/info/password").addValueEventListener(new ValueEventListener() {
+                                       @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            pass=dataSnapshot.getValue(String.class);
+                                         }
+
+                                         @Override
+                                         public void onCancelled(DatabaseError databaseError) {
+
+                                         }
+                                     });
+                                     Toast.makeText(getApplicationContext(),pass,Toast.LENGTH_LONG).show();
+                                 //    if (pass.equals(password.getText().toString().trim())){
                                      SharedPreferences sharedPreferences=getSharedPreferences("main",0);
                                      SharedPreferences.Editor editor=sharedPreferences.edit();
                                      editor.putString("type_of_user",type);
+                                     editor.putString("user",user);
                                      editor.putBoolean("logged",true);
                                      editor.apply();
                                      if (type.equals("Employee")){
@@ -68,8 +86,8 @@ public class Siginin extends AppCompatActivity {
                                          startActivity(employee);
                                          finish();
                                      }
-                                 }
-                             }
+                                 }}
+                             //}
                         }
 
                         @Override
@@ -82,5 +100,5 @@ public class Siginin extends AppCompatActivity {
 
             }
         });
-    }
+    }catch (Exception e){Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();}}
 }

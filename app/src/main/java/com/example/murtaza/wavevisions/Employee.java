@@ -1,5 +1,6 @@
 package com.example.murtaza.wavevisions;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,9 +31,16 @@ public class Employee extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(getApplicationContext(),"dfghjk",Toast.LENGTH_LONG).show();
+            SharedPreferences sharedPreferences=getSharedPreferences("main",0);
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.putString("type_of_user","undefined");
+            editor.putBoolean("logged",false);
+            editor.apply();
+            Toast.makeText(getApplicationContext(),"Logged Out",Toast.LENGTH_LONG).show();
+            finish();
 
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);

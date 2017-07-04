@@ -23,22 +23,20 @@
         android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="50sp"
-        android:layout_marginStart="50sp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="UID"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_below="@+id/name"
+        android:layout_alignStart="@+id/name" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/id"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:id="@+id/radioGroup">
+        android:id="@+id/radioGroup"
+        android:layout_alignBottom="@+id/signin"
+        android:layout_alignStart="@+id/signin"
+        android:layout_marginBottom="76dp">
 
         <RadioButton
             android:id="@+id/radioButton5"
@@ -67,10 +65,20 @@
         android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50sp"
-        android:layout_marginTop="43dp"
-        android:text="SIGNIN" />
+        android:layout_marginBottom="60dp"
+        android:text="SIGNIN"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/id"
+        android:layout_below="@+id/id"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

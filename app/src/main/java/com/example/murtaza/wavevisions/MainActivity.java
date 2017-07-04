@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
          sharedPreferences=getSharedPreferences("main",0);
          persis=sharedPreferences.getBoolean("persis",true);
          if (persis) {
-             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+             //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
              SharedPreferences.Editor editor=sharedPreferences.edit();
              editor.putBoolean("persis",false);
              editor.apply();
@@ -127,12 +127,11 @@ Intent i = new Intent(MainActivity.this,Siginin.class);
          rb= (RadioButton) findViewById(id);
          type_emp=rb.getText().toString();
          user.type=type_emp;
-         FirebaseDatabase.getInstance().getReference("user").child(type_emp).child(name_emp+" "+uid_emp).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+         FirebaseDatabase.getInstance().getReference("user").child(type_emp).child(name_emp+" "+uid_emp).child("info").setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
              @Override
              public void onSuccess(Void aVoid) {
                  tos("user created succesfully \n Sign In with name and ID");
-                 Intent i =getIntent();
-                 startActivity(i);
+                 name.setText("");age.setText("");email.setText("");password.setText("");uid.setText("");
                  //finish();
              }
          }).addOnFailureListener(new OnFailureListener() {
@@ -141,6 +140,17 @@ Intent i = new Intent(MainActivity.this,Siginin.class);
                 tos(e.toString());
              }
          });
+
      }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sharedPreferences=getSharedPreferences("main",0);
+
+            SharedPreferences.Editor editor=sharedPreferences.edit();
+            editor.putBoolean("persis",true);
+            editor.apply();
+
+    }
 }

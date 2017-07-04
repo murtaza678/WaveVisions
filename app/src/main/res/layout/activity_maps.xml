@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.murtaza.wavevisions.Track">
+
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_maps"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="400sp"
+    tools:context="com.example.murtaza.wavevisions.Track" />
+    <TextView
+        android:id="@+id/ditance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total distance travelled ="
+        android:textSize="24sp"
+        android:layout_above="@+id/visits"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="126dp" />
+
+    <TextView
+        android:id="@+id/visits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total clients visited = "
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
+</RelativeLayout>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Wave Visions</string>
+    <string name="app_name">The Upper Body</string>
     <string name="title_activity_admin">Admin</string>
     <string name="title_activity_employeee">Employeee</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
