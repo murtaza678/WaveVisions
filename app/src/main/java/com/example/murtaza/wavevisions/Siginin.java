@@ -57,6 +57,7 @@ public class Siginin extends AppCompatActivity {
                                        @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
                                             pass=dataSnapshot.getValue(String.class);
+                                           //
                                          }
 
                                          @Override
